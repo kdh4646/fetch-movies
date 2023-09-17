@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import MoviesList from "./components/MoviesList";
 import "./App.css";
@@ -33,7 +33,7 @@ function App() {
   // }
 
   //Another way rather than using then() => async, await
-  async function fetchMoviesHandler() {
+  const fetchMoviesHandler = useCallback(async () => {
     //set loading
     setIsLoading(true);
 
@@ -72,7 +72,11 @@ function App() {
     }
 
     setIsLoading(false);
-  }
+  }, []);
+
+  useEffect(() => {
+    fetchMoviesHandler();
+  }, [fetchMoviesHandler]);
 
   //handle multiple states
   let content = <p>Found no movies.</p>;
