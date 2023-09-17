@@ -13,3 +13,4 @@
 4. Using Firebase for POST data
 
 # 👀 Screenshots
+![image](https://github.com/kdh4646/fetch-movies/assets/71913953/878d58c1-a6f1-4be8-a62d-c5bb5fda6e18)
